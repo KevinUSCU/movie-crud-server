@@ -1,5 +1,5 @@
 // Check node environment
-const environment = process.env.NODE_ENV || 'development';
+const environment = process.env.NODE_ENV || 'development'
 
 // Set up Express
 const express = require('express')
