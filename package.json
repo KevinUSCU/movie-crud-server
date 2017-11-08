@@ -6,7 +6,8 @@
   "scripts": {
     "test": "none",
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "knex": "knex"
   },
   "author": "Kevin Springer",
   "license": "ISC",
