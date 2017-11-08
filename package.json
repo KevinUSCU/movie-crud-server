@@ -9,8 +9,16 @@
     "start": "node app.js",
     "knex": "knex"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinUSCU/movie-crud-server"
+  },
   "author": "Kevin Springer",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinUSCU/movie-crud-server/issues"
+  },
+  "homepage": "https://github.com/KevinUSCU/movie-crud-server#readme",
   "devDependencies": {
     "nodemon": "^1.12.1"
   },
