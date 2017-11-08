@@ -26,9 +26,11 @@ app.use(cors(corsOptions))
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
-// Set up Morgan
-const morgan = require('morgan')
-app.use(morgan('dev'))
+// Set up Morgan (only in development mode)
+if (environment === development) {
+  const morgan = require('morgan')  
+  app.use(morgan('dev'))
+}
 
 // Routes
 const routes = require('./src/routes')
