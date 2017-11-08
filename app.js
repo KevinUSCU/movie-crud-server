@@ -7,6 +7,9 @@ const app = express()
 const port = process.env.PORT || 3000
 app.disable('x-powered-by')
 
+// Attach SQL database using connection file
+require('./db/connection')
+
 // Set up Cors
 const cors = require('cors')
 if (environment === development) {
