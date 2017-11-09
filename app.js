@@ -12,7 +12,7 @@ require('./db/connection')
 
 // Set up Cors
 const cors = require('cors')
-if (environment === development) {
+if (environment === 'development') {
   var corsOptions = {
     origin: 'http://127.0.0.1:8080',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
@@ -30,7 +30,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 // Set up Morgan (only in development mode)
-if (environment === development) {
+if (environment === 'development') {
   const morgan = require('morgan')  
   app.use(morgan('dev'))
 }
@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  res.status(404).json({ error: 'Resource not found.' })
+  res.status(404).json({ error: 'Error 404: These are not the droids you are looking for.' })
 })
 
 // Listener
