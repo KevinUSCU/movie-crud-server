@@ -1,12 +1,12 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTableIfNotExists('movies', table => {
+  return knex.schema.createTable('movies', table => {
     table.increments()
     table.string('title').notNullable().defaultTo('')
-    table.string('director')
-    table.integer('year')
-    table.integer('star_rating')
-    table.string('poster_url')
+    table.string('director').notNullable().defaultTo('')
+    table.integer('year').notNullable().defaultTo(-1)
+    table.integer('star_rating').notNullable().defaultTo(-1)
+    table.string('poster_url').notNullable().defaultTo('')
     table.timestamps(true, true)
   })
 }
