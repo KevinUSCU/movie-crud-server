@@ -14,13 +14,13 @@ function createMovie(req, res, next) {
   const { title, director, year, star_rating, poster_url } = req.body
   if (!title) return next({ status: 400, error: `Error 400: Who's on first? This movie needs a title to continue!` })
   movie.createMovie(title, director, year, star_rating, poster_url)
-    .then(result => res.status(201).json(`'${title}' was added on ${result[0]}.`))
+    .then(result => res.status(201).json({ id: result[0].id, created_at: result[0].created_at }))
 }
 
 function updateMovie(req, res, next) {
   const { title, director, year, star_rating, poster_url } = req.body
   movie.updateMovie(req.params.id, title, director, year, star_rating, poster_url)
-    .then(result => res.status(202).json(`'${result[0].title}' was updated on ${result[0].updated_at}.`))
+    .then(result => res.status(202).json({ title: result[0].title, updated_at: result[0].updated_at }))
 }
 
 function deleteMovie(req, res, next) {
