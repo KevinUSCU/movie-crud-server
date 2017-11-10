@@ -13,7 +13,7 @@ function getMovie(id) {
 function createMovie(title, director, year, star_rating, poster_url) {
   return knex('movies')
     .insert({ title, director, year, star_rating, poster_url })
-    .returning('created_at')
+    .returning(['id', 'created_at'])
 }
 
 function updateMovie(id, title, director, year, star_rating, poster_url) {
